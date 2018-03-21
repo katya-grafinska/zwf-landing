@@ -1,0 +1,6 @@
+Sitemap: http://localhost/zero-waste-fest/sitemap.xml
+
+# global
+User-agent: *
+Disallow: /xmlrpc.php
+
