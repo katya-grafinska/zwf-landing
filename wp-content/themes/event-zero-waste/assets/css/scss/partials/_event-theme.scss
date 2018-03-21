@@ -1213,9 +1213,12 @@ img#wpstats {
 
 /* ----- Header Image ----- */
 .header-image {
-  width: auto;
-  height: 100%;
-  max-width: none;
+  width: 100%;
+  @media only screen and (max-width: 767px) {
+    max-width: none;
+    width: auto;
+    height: 100%;
+  }
 }
 
 
