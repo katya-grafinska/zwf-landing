@@ -3265,6 +3265,9 @@ body {
   line-height: 24px;
   color: #1f1f21; }
 
+a {
+  color: #f05123; }
+
 .site-header[role="banner"] {
   min-height: 100vh;
   height: 1px;
@@ -3315,6 +3318,8 @@ body {
   padding: 27px 0 33px; }
   .date-info li {
     font-size: 24px; }
+    .date-info li i {
+      font-size: 24px; }
 
 .social-links ul li a[href*="facebook.com"] {
   color: #3b5998;
@@ -3324,3 +3329,38 @@ body {
   width: 35px;
   height: 35px;
   line-height: 1.8; }
+
+.schedule-list-box .box-title:before {
+  color: #005735; }
+
+.schedule-list-box {
+  background-color: #c7dde2; }
+
+.list-bg-box {
+  background-color: #fafafa;
+  color: #005735; }
+
+.list-nav {
+  border-bottom-color: #005735; }
+  .list-nav li:after {
+    background-color: #005735; }
+  .list-nav li:hover, .list-nav li.current {
+    color: #f05123; }
+
+.box-title {
+  color: #f05123;
+  font-weight: 700; }
+
+.schedule-list-content {
+  display: inline-block; }
+
+.schedule-list li {
+  font-size: 18px; }
+  .schedule-list li p {
+    display: block;
+    margin-bottom: 0; }
+  .schedule-list li a {
+    color: #f05123; }
+
+.schedule-list .list-count {
+  border: none; }

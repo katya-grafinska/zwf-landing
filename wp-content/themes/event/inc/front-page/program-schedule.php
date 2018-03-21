@@ -64,7 +64,10 @@ function event_program_schedule(){
 								));
 									while ($get_program_schedule_posts->have_posts()):$get_program_schedule_posts->the_post(); 
 									?> 
-									<li><span class="list-count"><?php the_title(); ?></span><?php the_content(); ?></li> 
+									<li>
+                                        <?php if (get_the_title()):?><span class="list-count"><?php the_title(); ?></span> <?php endif ?>
+                                        <div class="schedule-list-content"><?php the_content(); ?></div>
+                                    </li>
 									<?php endwhile;
 								 ?>
 								</ul>

@@ -92,7 +92,7 @@
                                                 }
                                             endif;
                                                 if($event_settings['event_date_time'] !=''){
-                                                    echo '<li>'.esc_attr($event_settings['event_date_picker']).'&nbsp;&nbsp;&nbsp;'.esc_attr($event_settings['event_date_time']).'</li>';
+                                                    echo '<li><i class="fa fa-calendar"></i>'.esc_attr($event_settings['event_date_picker']).esc_attr($event_settings['event_date_time']).'</li>';
                                                 }
                                                 if($event_settings['event_venue'] !=''){
                                                     echo '<li>'.esc_attr($event_settings['event_venue']).'</li>';

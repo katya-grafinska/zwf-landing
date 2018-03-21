@@ -7,6 +7,10 @@ body {
   color: $black;
 }
 
+a {
+  color: $brand-color-4;
+}
+
 .site-header[role="banner"] {
   min-height: 100vh;
   height: 1px;
@@ -59,6 +63,9 @@ body {
   padding: 27px 0 33px;
   li {
     font-size: 24px;
+    i {
+      font-size: 24px;
+    }
   }
 }
 
@@ -70,4 +77,58 @@ body {
   width: 35px;
   height: 35px;
   line-height: 1.8;
+}
+
+.schedule-list-box {
+  .box-title {
+    &:before {
+      color: $brand-color-1;
+    }
+  }
+}
+
+.schedule-list-box {
+  background-color: $light-gray;
+}
+
+.list-bg-box {
+  background-color: #fafafa;
+  color: $brand-color-1;
+}
+
+.list-nav {
+  border-bottom-color: $brand-color-1;
+  li {
+    &:after {
+      background-color: $brand-color-1;
+    }
+    &:hover, &.current {
+      color: $brand-color-4;
+    }
+  }
+}
+
+.box-title {
+  color: $brand-color-4;
+  font-weight: 700;
+}
+
+.schedule-list-content {
+  display: inline-block;
+}
+
+.schedule-list {
+  li {
+    font-size: 18px;
+    p {
+      display: block;
+      margin-bottom: 0;
+    }
+    a {
+      color: $brand-color-4;
+    }
+  }
+  .list-count {
+    border: none;
+  }
 }
