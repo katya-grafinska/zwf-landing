@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=cyrillic,cyrillic-ext');
+
+body {
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 24px;
+  color: $black;
+}
+
+.site-header[role="banner"] {
+  min-height: 100vh;
+  height: 1px;
+  mix-blend-mode: multiply;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: rgba(#000, 0.5);
+  }
+}
+
+.single-event-info {
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $brand-color-4;
+}
+
+#site-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 140px;
+  line-height: 1.194;
+  margin: 0;
+  color: $brand-color-3;
+}
+
+#site-description {
+  font-size: 30px;
+  letter-spacing: 0.2em;
+  line-height: 1.727;
+  text-transform: uppercase;
+}
+
+#site-branding {
+  color: $brand-color-3;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+.date-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 27px 0 33px;
+  li {
+    font-size: 24px;
+  }
+}
+
+.social-links ul li a[href*="facebook.com"] {
+  color: #3b5998;
+  background-color: #fff;
+  font-size: 22px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  line-height: 1.8;
+}

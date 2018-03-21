@@ -229,7 +229,7 @@ function event_header_display(){
 
 	?> <h1 id="site-title"> <?php }else{?> <h2 id="site-title"> <?php } ?>
 
-	<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_html(get_bloginfo('name', 'display'));?>" rel="home"> <?php bloginfo('name');?> </a>
+	<?php bloginfo('name');?>
 
 	<?php if(is_home() || is_front_page()){ ?> </h1>  <!-- end #site-branding --> <?php } else { ?> </h2> <!-- end .site-title --> <?php }
 
@@ -265,7 +265,7 @@ if ( ! function_exists( 'event_the_custom_logo' ) ) :
 function event_header_image_display(){
 	$event_header_image = get_header_image();
 	if(!empty($event_header_image)){ ?>
-		<a href="<?php echo esc_url(home_url('/'));?>"><img src="<?php echo esc_url($event_header_image);?>" class="header-image" width="<?php echo get_custom_header()->width;?>" height="<?php echo get_custom_header()->height;?>" alt="<?php echo esc_attr(get_bloginfo('name', 'display'));?>"> </a>
+		<img src="<?php echo esc_url($event_header_image);?>" class="header-image" width="<?php echo get_custom_header()->width;?>" height="<?php echo get_custom_header()->height;?>" alt="<?php echo esc_attr(get_bloginfo('name', 'display'));?>">
 	<?php }
 }
 add_action('event_header_image','event_header_image_display');

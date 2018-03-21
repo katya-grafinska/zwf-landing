@@ -1,0 +1,94 @@
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin mq($point) {
+
+  $mq-xl: "all and (min-width: 1850px)";
+  $mq-lg: "all and (min-width: 1200px)";
+  $mq-md: "all and (min-width: 992px)";
+  $mq-sm: "all and (min-width: 768px)";
+  $mq-ipad: "all and (min-width: 768px) and (max-width: 1366px) and (orientation:portrait)";
+  $mq-ipad-pro: "only screen and (min-device-width: 1024px) and (max-device-width: 1366px)
+                 and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)";
+  $mq-ipad-landscape: "all and (min-width: 768px) and (max-width: 1024px) and (orientation:landscape)";
+  $mq-mobile: "all and (max-width: 767px) and (orientation:portrait)";
+  $mq-mobile-landscape: "all and (max-width: 767px) and (orientation:landscape)";
+  $mq-small-mobile: "all and (max-width: 374px) and (orientation:portrait)";
+  $mq-small-mobile-landscape: "all and (max-width: 570px) and (orientation:landscape)";
+  $mq-laptop: "all and (min-width: 1100px) and (max-height: 860px)";
+
+  @if $point == lg {
+    @media #{$mq-lg} { @content; }
+  }
+  @else if $point == sm {
+    @media #{$mq-sm} { @content; }
+  }
+  @else if $point == md {
+    @media #{$mq-md} { @content; }
+  }
+  @else if $point == xl {
+    @media #{$mq-xl}  { @content; }
+  }
+  @else if $point == ipad {
+    @media #{$mq-ipad}  { @content; }
+  }
+  @else if $point == ipad-landscape {
+    @media #{$mq-ipad-landscape}  { @content; }
+  }
+  @else if $point == mobile {
+    @media #{$mq-mobile}  { @content; }
+  }
+  @else if $point == mobile-landscape {
+    @media #{$mq-mobile-landscape}  { @content; }
+  }
+  @else if $point == small-mobile {
+    @media #{$mq-small-mobile}  { @content; }
+  }
+  @else if $point == small-mobile-landscape {
+    @media #{$mq-small-mobile-landscape}  { @content; }
+  }
+  @else if $point == ipad-pro {
+    @media #{$mq-ipad-pro}  { @content; }
+  }
+  @else if $point == laptop {
+    @media #{$mq-laptop}  { @content; }
+  }
+}
