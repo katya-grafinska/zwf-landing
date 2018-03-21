@@ -33,6 +33,9 @@ a {
   bottom: 0;
   width: 100%;
   background-color: $brand-color-4;
+  @media only screen and (max-width: 1023px) {
+    background-color: rgba($brand-color-4, 0.6) !important;
+  }
 }
 
 #site-title {
@@ -42,27 +45,58 @@ a {
   line-height: 1.194;
   margin: 0;
   color: $brand-color-3;
+  @media only screen and (max-width: 767px) {
+    font-size: 42px !important;
+  }
 }
 
 #site-description {
-  font-size: 30px;
+  font-size: 18px;
   letter-spacing: 0.2em;
   line-height: 1.727;
   text-transform: uppercase;
+  @include mq(sm) {
+    font-size: 30px;
+  }
 }
 
 #site-branding {
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  top: 26%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
   color: $brand-color-3;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
+  @include mq(sm) {
+    top: 30%;
+  }
+  @media only screen and (max-width: 480px) {
+    max-width: none !important;
+  }
 }
 
 .date-info {
   display: flex;
   justify-content: space-between;
-  padding: 27px 0 33px;
+  padding: 20px 0 24px;
+  @include mq(sm) {
+    padding: 27px 0 33px;
+  }
   li {
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 7px;
+    @include mq(sm) {
+      font-size: 24px;
+      margin-bottom: 13px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
     i {
       font-size: 24px;
     }
@@ -81,8 +115,16 @@ a {
 
 .schedule-list-box {
   .box-title {
+    font-size: 24px;
+    @include mq(sm) {
+      font-size: 26px;
+    }
     &:before {
       color: $brand-color-1;
+      font-size: 24px;
+      @include mq(sm) {
+        font-size: 34px;
+      }
     }
   }
 }
@@ -94,11 +136,18 @@ a {
 .list-bg-box {
   background-color: #fafafa;
   color: $brand-color-1;
+  padding: 25px;
+  @include mq(sm) {
+    padding: 50px;
+  }
 }
 
 .list-nav {
   border-bottom-color: $brand-color-1;
   li {
+    @media only screen and (max-width: 767px) {
+      padding-left: 0;
+    }
     &:after {
       background-color: $brand-color-1;
     }

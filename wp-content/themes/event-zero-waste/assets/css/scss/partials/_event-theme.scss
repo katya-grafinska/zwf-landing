@@ -907,14 +907,6 @@ input[type=search] {
 
 /* 11.0 Logo-Name-Slogan
 ================================================== */
-#site-branding {
-  padding: 10px 0;
-  position: absolute;
-  width: 100%;
-  top: 30%;
-  text-align: center;
-}
-
 #site-branding .custom-logo {
   float: left;
   margin-right: 10px;
@@ -1221,8 +1213,9 @@ img#wpstats {
 
 /* ----- Header Image ----- */
 .header-image {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
+  max-width: none;
 }
 
 
@@ -2373,7 +2366,6 @@ input.search-field {
 /* Single Event
 ================================================== */
 .single-event-info {
-  background-color: #0d1d31;
   margin-bottom: -1px;
   margin-top: 0;
   position: relative;
